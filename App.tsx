@@ -1,28 +1,25 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { NavigationContainer } from '@react-navigation/native';
+import { useEffect, useState } from 'react';
+import ThaiDreamsStack from './ThaiDreamsWithFlowers/ThaiDreamsNavigation/ThaiDreamsStack';
+import { ThaiDreamsContext } from './ThaiDreamsWithFlowers/ThaiDreamsStore/thaiDreamsContext';
+import ThaiDreamsLoader from './ThaiDreamsWithFlowers/ThaiDreamsComponents/ThaiDreamsLoader';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+const App = () => {
+  const [isLoading, setIsLoading] = useState(false);
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(true);
+    }, 5500);
+  }, []);
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <NavigationContainer>
+      <ThaiDreamsContext>
+        {!isLoading ? <ThaiDreamsLoader /> : <ThaiDreamsStack />}
+      </ThaiDreamsContext>
+    </NavigationContainer>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+};
 
 export default App;
