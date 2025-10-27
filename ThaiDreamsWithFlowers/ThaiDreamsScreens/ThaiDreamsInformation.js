@@ -4,6 +4,7 @@ import {
   Dimensions,
   Image,
   Linking,
+  Platform,
   Share,
   StyleSheet,
   Text,
@@ -47,14 +48,33 @@ Collect lotuses, discover stories, breathe in beauty - and every day will become
             ]}
           >
             <View style={{ width: '50%' }}>
-              <Text style={styles.thaidreamswelcometext}>
-                “Dreaming Thai with Flowers” ​​is your journey into the heart of
-                blooming Thailand.
-              </Text>
+              {Platform.OS === 'ios' ? (
+                <Text style={styles.thaidreamswelcometext}>
+                  “Dreaming Thai with Flowers” ​​is your journey into the heart
+                  of blooming Thailand.
+                </Text>
+              ) : (
+                <Text style={styles.thaidreamswelcometext}>
+                  “Luxury Thai Dreams” ​​is your journey into the heart of
+                  blooming Thailand.
+                </Text>
+              )}
             </View>
-            <Image
-              source={require('../../assets/images/ThaiDreamsInformation.png')}
-            />
+
+            {Platform.OS === 'ios' ? (
+              <Image
+                source={require('../../assets/images/ThaiDreamsInformation.png')}
+              />
+            ) : (
+              <Image
+                source={require('../../assets/images/dreamingandricon.png')}
+                style={{
+                  width: 112,
+                  height: 112,
+                  borderRadius: 32,
+                }}
+              />
+            )}
           </View>
         </LinearGradient>
 
@@ -102,23 +122,25 @@ Collect lotuses, discover stories, breathe in beauty - and every day will become
               <Text style={styles.thaidreamsbuttontext}>Share</Text>
             </LinearGradient>
           </TouchableOpacity>
-          <TouchableOpacity
-            activeOpacity={0.6}
-            onPress={() =>
-              Linking.openURL(
-                'https://apps.apple.com/us/app/thai-dreams-with-flowers/id6754329661',
-              )
-            }
-          >
-            <LinearGradient
-              colors={thaiDreamsGradientColors}
-              start={{ x: 0, y: 0.9 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.thaidreamsgradbutton}
+          {Platform.OS === 'ios' && (
+            <TouchableOpacity
+              activeOpacity={0.6}
+              onPress={() =>
+                Linking.openURL(
+                  'https://apps.apple.com/us/app/thai-dreams-with-flowers/id6754329661',
+                )
+              }
             >
-              <Text style={styles.thaidreamsbuttontext}>Rate app</Text>
-            </LinearGradient>
-          </TouchableOpacity>
+              <LinearGradient
+                colors={thaiDreamsGradientColors}
+                start={{ x: 0, y: 0.9 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.thaidreamsgradbutton}
+              >
+                <Text style={styles.thaidreamsbuttontext}>Rate app</Text>
+              </LinearGradient>
+            </TouchableOpacity>
+          )}
         </View>
       </View>
     </ThaiDreamsBackground>
