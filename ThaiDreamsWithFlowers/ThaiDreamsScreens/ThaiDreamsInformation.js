@@ -87,13 +87,13 @@ Collect lotuses, discover stories, breathe in beauty - and every day will become
               styles.thaidreamswelcomecnt,
               {
                 flexDirection: 'row',
-                paddingBottom: 0,
+                paddingBottom: 10,
                 paddingRight: 0,
                 alignItems: 'center',
               },
             ]}
           >
-            <View style={{ width: '60%' }}>
+            <View style={{ width: '55%' }}>
               <Text style={styles.thaidreamswelcometext}>
                 Together with guide Lina Arun, you will discover places where
                 nature speaks in colors and legends come to life in petals.
@@ -103,7 +103,7 @@ Collect lotuses, discover stories, breathe in beauty - and every day will become
             </View>
             <Image
               source={require('../../assets/images/lotusinfoimg.png')}
-              style={{ right: -10 }}
+              style={{ bottom: -10 }}
             />
           </View>
         </LinearGradient>
@@ -169,7 +169,6 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 12,
     fontFamily: 'Manrope-Medium',
-    lineHeight: 18,
   },
   thaidreamsbuttontext: {
     color: '#000',

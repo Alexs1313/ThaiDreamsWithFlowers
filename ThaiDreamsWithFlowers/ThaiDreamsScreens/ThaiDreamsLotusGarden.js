@@ -116,7 +116,7 @@ const ThaiDreamsLotusGarden = () => {
                     />
                     <Image
                       source={require('../../assets/images/minilotus.png')}
-                      style={{ position: 'absolute', right: -40, top: 40 }}
+                      style={{ position: 'absolute', right: -10, top: 40 }}
                     />
                     <Image
                       source={require('../../assets/images/minilotus.png')}
