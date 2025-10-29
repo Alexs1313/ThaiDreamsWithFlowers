@@ -48,33 +48,15 @@ Collect lotuses, discover stories, breathe in beauty - and every day will become
             ]}
           >
             <View style={{ width: '50%' }}>
-              {Platform.OS === 'ios' ? (
-                <Text style={styles.thaidreamswelcometext}>
-                  “Dreaming Thai with Flowers” ​​is your journey into the heart
-                  of blooming Thailand.
-                </Text>
-              ) : (
-                <Text style={styles.thaidreamswelcometext}>
-                  “Luxury Thai Dreams” ​​is your journey into the heart of
-                  blooming Thailand.
-                </Text>
-              )}
+              <Text style={styles.thaidreamswelcometext}>
+                “Dreaming Thai with Flowers” ​​is your journey into the heart of
+                blooming Thailand.
+              </Text>
             </View>
 
-            {Platform.OS === 'ios' ? (
-              <Image
-                source={require('../../assets/images/ThaiDreamsInformation.png')}
-              />
-            ) : (
-              <Image
-                source={require('../../assets/images/dreamingandricon.png')}
-                style={{
-                  width: 112,
-                  height: 112,
-                  borderRadius: 32,
-                }}
-              />
-            )}
+            <Image
+              source={require('../../assets/images/ThaiDreamsInformation.png')}
+            />
           </View>
         </LinearGradient>
 

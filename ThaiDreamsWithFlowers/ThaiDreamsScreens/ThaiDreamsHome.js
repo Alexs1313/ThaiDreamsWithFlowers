@@ -1,7 +1,6 @@
 import {
   Dimensions,
   Image,
-  Platform,
   Share,
   StyleSheet,
   Text,
@@ -155,22 +154,10 @@ ${dailyThaiLotusStory.subtitle}`,
     <ThaiDreamsBackground>
       <View style={styles.thaidreamscontainer}>
         <View style={{ alignItems: 'center' }}>
-          {Platform.OS === 'ios' ? (
-            <Image
-              source={require('../../assets/images/lotushomelogo.png')}
-              style={{ marginBottom: 26 }}
-            />
-          ) : (
-            <Image
-              source={require('../../assets/images/dreamingandricon.png')}
-              style={{
-                marginBottom: 26,
-                width: 70,
-                height: 70,
-                borderRadius: 12,
-              }}
-            />
-          )}
+          <Image
+            source={require('../../assets/images/lotushomelogo.png')}
+            style={{ marginBottom: 26 }}
+          />
         </View>
 
         <LinearGradient
